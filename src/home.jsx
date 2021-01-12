@@ -124,8 +124,8 @@ class Home extends Component{
                   <div id="day"></div>
                   <div id="month"></div>
               </div>
-                </div>
-            </section>
+            </div>
+          </section>
         )
     }
 }

@@ -33,7 +33,6 @@ function Index() {
       </nav>
 
     <header>
-      
         <Route exact path="/"><Home/></Route> 
         <Route path="/ShopImporting/DetailImporting" component={withRouter(Detail)}/>
         <Route path="/ShopImporting" component={withRouter(Shop)}/>
