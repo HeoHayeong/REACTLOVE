@@ -7,26 +7,26 @@ import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 
 class Shop extends Component{
-    componentDidMount(){
+    componentDidMount() {
 
-        $(".intro").css("opacity",0);     
-  $(".border").hover(function(e){
-      var intro = $(e.target).children(".intro");
-      console.log(intro);
-      intro.css("opacity",1);
-      intro.css("transition", "opacity 2s" );
+        $(".intro").css("opacity", 0);
+        $(".border").hover(function (e) {
+            var intro = $(e.target).children(".intro");
+            console.log(intro);
+            intro.css("opacity", 1);
+            intro.css("transition", "opacity 2s");
 
-  }, function(){
-      $(".intro").css("opacity",0);
-  })
+        }, function () {
+            $(".intro").css("opacity", 0);
+        })
 
+        $(".startbtn").click(function () {
 
-    $(".startbtn").click(function(){
-       
-        var offset = $(".section2").offset();
-        $('html, body').animate({scrollTop : offset.top},400)
-    });
-
+            var offset = $(".section2").offset();
+            $('html, body').animate({
+                scrollTop: offset.top
+            }, 400)
+        });
 
     }
 

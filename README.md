@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# 1. react-router
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+><span style="background : pink; color: #000; padding: 0 5px; ">**React-Router**</span> : 새로운 페이지를 로드하지 않고 하나의 페이지 안에서 필요한 데이터만 가져오는 형태 (새로고침X)
 
-## Available Scripts
+```js
+import {Route, withRouter} from 'react-router-dom'; 
 
-In the project directory, you can run:
+import Home from './home';
+import Detail from './detail';
+import Shop from './shop';
+import Chat from './Chat';
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+function Index() {
+  
+  return (
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+        <Route exact path="/"><Home/></Route> 
+        <Route path="/ShopImporting/DetailImporting" component={withRouter(Detail)}/>
+        <Route path="/ShopImporting" component={withRouter(Shop)}/>
+        <Route path="/ChatImporting" component={withRouter(Chat)}/>
 
-### `npm test`
+  )}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
-### `npm run build`
+# 2. react에서 JQuery 쓰는법 
+>npm install jquery
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```js
+import $ from "jquery";
+window.$ = window.jQuery = jQuery;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+class Shop extends Component{
+    componentDidMount() {
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        $(".intro").css("opacity", 0);
+        $(".border").hover(function (e) {
+            var intro = $(e.target).children(".intro");
+            console.log(intro);
+            intro.css("opacity", 1);
+            intro.css("transition", "opacity 2s");
 
-### `npm run eject`
+        }, function () {
+            $(".intro").css("opacity", 0);
+        })
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+        $(".startbtn").click(function () {
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+            var offset = $(".section2").offset();
+            $('html, body').animate({
+                scrollTop: offset.top
+            }, 400)
+        });
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    }
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+        render() {
+            return (
 
-## Learn More
+            )
+        }
+    }
+        
+      
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+><span style="background : pink; color: #000; padding: 0 5px; ">**componentDidMount**</span> : React에서 제공하지 않는 DOM 이벤트는 컴포넌트 Life Cycle 이벤트인 **componentDidMount** 에서 등록
