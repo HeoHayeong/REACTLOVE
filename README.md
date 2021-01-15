@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 1. react-router
 
 ><span style="background : pink; color: #000; padding: 0 5px; ">**React-Router**</span> : 새로운 페이지를 로드하지 않고 하나의 페이지 안에서 필요한 데이터만 가져오는 형태 (새로고침X)
@@ -66,3 +67,7 @@ class Shop extends Component{
 ```
 
 ><span style="background : pink; color: #000; padding: 0 5px; ">**componentDidMount**</span> : React에서 제공하지 않는 DOM 이벤트는 컴포넌트 Life Cycle 이벤트인 **componentDidMount** 에서 등록
+=======
+리액트를 공부하면서 만든 개인프로젝트! 
+react-router를 활용하여 만든 SPA ! 
+>>>>>>> b77cf72d68823a7722f3afd97a796ad4faac3cb3
