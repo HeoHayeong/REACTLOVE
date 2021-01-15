@@ -67,4 +67,4 @@ class Shop extends Component{
       
 ```
 
-><span style="background : pink; color: #000; padding: 0 5px; ">**componentDidMount**</span> : React에서 제공하지 않는 DOM 이벤트는 컴포넌트 Life Cycle 이벤트인 **componentDidMount** 에서 등록
+><span style="background : pink; color: #000; padding: 0 5px; ">**componentDidMount**</span> : React에서 제공하지 않는 DOM 이벤트는 컴포넌트 Life Cycle 이벤트인 componentDidMount 에서 등록
